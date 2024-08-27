@@ -1,11 +1,15 @@
 {
+  "engines": {
+    "node": ">=20.6.0"
+  },
   "name": "new-stuff",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server.ts",
   "type": "module",
   "scripts": {
-    "dev": "node --env-file=.env --env-file=.env.development --watch --watch-preserve-output src/server.js",
-    "production": "node --env-file=.env --env-file=.env.production src/server.js"
+    "dev": "node --env-file=.env --env-file=.env.development --watch --watch-preserve-output -r ts-node/register src/server.ts",
+    "build": "tsc",
+    "production": "node --env-file=.env --env-file=.env.production src/server.ts"
   },
   "keywords": [],
   "author": "Emiliano Sasal",
@@ -13,5 +17,11 @@
   "description": "A simple API to test new stuff in Node.js",
   "dependencies": {
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   }
 }
