@@ -2,7 +2,13 @@ import express from "express"
 
 const app = express()
 
-let items = []
+const { PORT, NODE_ENV } = process.env
+
+type Items = {
+  id: number
+}
+
+let items: Items[] = []
 
 // Create
 app.post("/items", (req, res) => {
@@ -41,7 +47,7 @@ app.delete("/items/:id", (req, res) => {
   res.send(deletedItem)
 })
 
-app.listen(process.env.PORT, () => {
-  console.log(`Environment: ${process.env.NODE_ENV}`)
-  console.log(`Server is running on http://localhost:${process.env.PORT}`)
+app.listen(PORT, () => {
+  console.log(`Environment: ${NODE_ENV}`)
+  console.log(`Server is running on http://localhost:${PORT}`)
 })

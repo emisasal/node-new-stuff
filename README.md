@@ -23,3 +23,16 @@ The command to keep the changes on screen: `--watch-preserve-output`.
 
 `--watch` looks for any change from the entry point (`src/server.js`).
 The command line for a specific (or multiple) path is `--watch-path=` followed by the folder to watch (`.src`).
+
+## TypeScript
+
+- Install dev dependencies `npm i -D typescript ts-node @types/node`.
+- Initialize TypeScript with `npx tsc --init`.
+- In package.json add `"engines": {"node": ">=20.6.0"}` to prevent from older Node versions (not compatible).
+- Modify "dev" script to `node --env-file=.env --env-file=.env.development --watch --watch-preserve-output -r ts-node/register src/server.js`.
+- Add "build" script with `tsc`.
+
+## ToDo
+
+- Fix dev execution error.
+- Finish production script and configs.
