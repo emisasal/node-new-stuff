@@ -34,3 +34,5 @@ The command line for a specific (or multiple) path is `--watch-path=` followed b
 - Add "start" script with `node --env-file=.env --env-file=.env.production dist/server.js`.
 
 ## ToDo
+
+- Try Node native Test Runner (in parallel with Jest)
