@@ -8,7 +8,7 @@ type Items = {
   id: number
 }
 
-let items: Items[] = []
+let items: Items[] = [{ id: 1 }, { id: 2 }, { id: 3 }]
 
 // Create
 app.post("/items", (req, res) => {

@@ -4,12 +4,12 @@
   },
   "name": "new-stuff",
   "version": "1.0.0",
-  "main": "server.ts",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
     "dev": "node --env-file=.env --env-file=.env.development --watch --watch-preserve-output -r ts-node/register src/server.ts",
     "build": "tsc",
-    "production": "node --env-file=.env --env-file=.env.production src/server.ts"
+    "start": "node --env-file=.env --env-file=.env.production dist/server.js",
+    "test": "node node_modules/.bin/jest"
   },
   "keywords": [],
   "author": "Emiliano Sasal",
@@ -20,7 +20,9 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.13",
     "@types/node": "^22.5.0",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }

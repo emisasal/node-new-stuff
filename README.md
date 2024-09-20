@@ -31,8 +31,6 @@ The command line for a specific (or multiple) path is `--watch-path=` followed b
 - In package.json add `"engines": {"node": ">=20.6.0"}` to prevent from older Node versions (not compatible).
 - Modify "dev" script to `node --env-file=.env --env-file=.env.development --watch --watch-preserve-output -r ts-node/register src/server.js`.
 - Add "build" script with `tsc`.
+- Add "start" script with `node --env-file=.env --env-file=.env.production dist/server.js`.
 
 ## ToDo
-
-- Fix dev execution error.
-- Finish production script and configs.
